@@ -15,7 +15,7 @@ public class Earth extends Group {
     private Sphere sph = new Sphere();
     ArrayList<Sphere> yellowSphere = new ArrayList<>();
     PhongMaterial material = new PhongMaterial();
-    //private Scene ihm = new Scene();
+
 
     public Earth() {
         super();

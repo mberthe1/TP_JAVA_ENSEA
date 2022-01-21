@@ -21,7 +21,6 @@ public class Interface extends Application {
         Scene ihm = new Scene(pane, 600, 400, true);
         primaryStage.setScene(ihm);
         primaryStage.show();
-        //  Event event = new Event();
 
         PerspectiveCamera camera = new PerspectiveCamera(true);
         camera.setTranslateZ(-1500);
