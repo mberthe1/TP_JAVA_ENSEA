@@ -19,11 +19,9 @@ public class Interface extends Application
     {
         primaryStage.setTitle("Hello world");
         Earth earth = new Earth();
-        Pane pane = new Pane(earth);
-        Scene ihm = new Scene(pane, 600, 400, true);
+        Scene ihm = new Scene(earth, 600, 400, true);
         primaryStage.setScene(ihm);
         primaryStage.show();
-
         PerspectiveCamera camera = new PerspectiveCamera(true);
         camera.setTranslateZ(-1500);
         camera.setNearClip(0.1);
@@ -56,14 +54,11 @@ public class Interface extends Application
                 Aeroport near;
                 if (pickResult.getIntersectedNode() != null)
                 {
-                    getx = pickResult.getIntersectedPoint().getX();
-                    gety = pickResult.getIntersectedPoint().getY();
+                    getx = pickResult.getIntersectedTexCoord().getX();
+                    gety = pickResult.getIntersectedTexCoord().getY();
                     lon = 360 * (getx - 0.5);
-                    lat = Math.toDegrees(Math.atan(Math.exp((0.5 - gety) / 0.2678) - Math.PI / 2));
+                    lat = 2*Math.toDegrees(Math.atan(Math.exp((0.5 - gety) / 0.2678))) -90;
                     System.out.println("longitude =" + lon + " latitude =" + lat);
-                    World w = new World("airport-codes_no_comma.csv");
-                    near = w.findNearestAirport(lon, lat);
-                    System.out.println(near);
 
                 }
             }
