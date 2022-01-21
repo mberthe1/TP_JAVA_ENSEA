@@ -9,7 +9,8 @@ import javafx.scene.transform.Rotate;
 
 import java.util.ArrayList;
 
-public class Earth extends Group {
+public class Earth extends Group
+{
 
     private Rotate ry = new Rotate(0, new Point3D(0,1,0));
     private Sphere sph = new Sphere();
@@ -17,7 +18,8 @@ public class Earth extends Group {
     PhongMaterial material = new PhongMaterial();
 
 
-    public Earth() {
+    public Earth()
+    {
         super();
         Image im = new Image("/earth_lights_4800.png");
         sph.setRadius(300);
@@ -29,10 +31,12 @@ public class Earth extends Group {
 
 
     }
-    AnimationTimer animationTimer = new AnimationTimer() {
+    AnimationTimer animationTimer = new AnimationTimer()
+    {
         double angle = 0;
         @Override
-        public void handle(long time) {
+        public void handle(long time)
+        {
             ry.setAngle(time/50000000);
         }
     };
