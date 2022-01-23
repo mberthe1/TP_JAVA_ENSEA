@@ -59,6 +59,9 @@ public class Interface extends Application
                     lon = 360 * (getx - 0.5);
                     lat = 2*Math.toDegrees(Math.atan(Math.exp((0.5 - gety) / 0.2678))) -90;
                     System.out.println("longitude =" + lon + " latitude =" + lat);
+                    World w = new World("./data/airport-codes_no_comma.csv");
+                    near = w.findNearestAirport(lon, lat);
+                    System.out.println(near);
 
                 }
             }
